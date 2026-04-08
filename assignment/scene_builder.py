@@ -382,11 +382,11 @@ car_full = cmds.group("car_body", "wheels_grp", "cabin", name="car_grp")
 
 #Full Car Parameters
 car_x = -26.148
-car_y = 14.602
+car_z = 14.602
 car_rotation_y = 134.669
 
 #Position the full car
-cmds.move(car_x, riverbank_height, car_y, "car_grp")
+cmds.move(car_x, riverbank_height, car_z, "car_grp")
 
 #Rotate the full car
 cmds.rotate(0, car_rotation_y, 0, "car_grp")
