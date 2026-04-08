@@ -380,11 +380,16 @@ cmds.move(0, car_body_height + car_body_offset_y + cabin_height / 2.0, -(car_bod
 #Group the car body, wheels, and cabin together
 car_full = cmds.group("car_body", "wheels_grp", "cabin", name="car_grp")
 
+#Full Car Parameters
+car_x = -26.148
+car_y = 14.602
+car_rotation_y = 134.669
+
 #Position the full car
-cmds.move(-26.148, riverbank_height, 14.602, "car_grp")
+cmds.move(car_x, riverbank_height, car_y, "car_grp")
 
 #Rotate the full car
-cmds.rotate(0, 134.669, 0, "car_grp")
+cmds.rotate(0, car_rotation_y, 0, "car_grp")
 
 #Apply the car body shader to the full body of the car - Blue Gray metal
 car_shader = cmds.shadingNode("lambert", asShader=True, name="car_Mat")
@@ -458,8 +463,12 @@ cmds.move(mast_radius / 0.1957, mast_height / 1.25, 0, "sail")
 #Group the boat body, mast, and sail together
 boat = cmds.group("boat_body", "mast", "sail", name="boat_grp")
 
+#Full Boat Parameters
+boat_x = 0
+boat_z = -9
+
 #Position the full boat
-cmds.move(0, 0, -9, "boat_grp")
+cmds.move(boat_x, 0, boat_z, "boat_grp")
 
 #Apply the boat shader to the boat body and sail - White metal/cloth
 boat_shader = cmds.shadingNode("lambert", asShader=True, name="boat_Mat")
